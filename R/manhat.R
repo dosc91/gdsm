@@ -7,8 +7,6 @@
 #' @param v1 Either an individual vector or a row name of \code{data}.
 #' @param v2 Either an individual vector or a row name of \code{data}.
 #'
-#' @return Nothing.
-#'
 #' @author D. Schmitz
 #'
 #' @examples

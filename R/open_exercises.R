@@ -5,8 +5,6 @@
 #'
 #' @param session_number The number of the session.
 #'
-#' @return Nothing.
-#'
 #' @author D. Schmitz
 #'
 #' @references Schmitz, D., & Esser, J. (2021). SfL: Statistics for Linguistics. R package version 0.3. URL: https://github.com/dosc91/SfL
