@@ -1,7 +1,7 @@
 # SfL <img src='https://dominicschmitz.com/wp-content/uploads/2022/03/Zeichenflaeche-1-1.png' align="right" height="138" />
 
 <!-- badges: start -->
-![](https://img.shields.io/badge/version-0.1-FFA70B.svg)
+![](https://img.shields.io/badge/version-0.2-FFA70B.svg)
 ![](https://img.shields.io/github/last-commit/dosc91/gdsm)
 <!-- badges: end -->
 
@@ -31,7 +31,7 @@ You will be asked to update dependencies during installation; usually, updates c
 
 Please cite the package as follows:
 
-Schmitz, D., & Schneider, V. (2022). gdsm: General functions for Distributional SeMantics. R package version 0.1. URL: https://github.com/dosc91/gdsm
+Schmitz, D., & Schneider, V. (2022). gdsm: General functions for Distributional SeMantics. R package version 0.2. URL: https://github.com/dosc91/gdsm
 
 
 
