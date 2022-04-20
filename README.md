@@ -24,8 +24,7 @@ The preferred way to install this package is through devtools:
 devtools::install_github("dosc91/gdsm", dependencies=TRUE)
 ```
 
-You will be asked to update dependencies during installation; usually, updates can be skipped. Once the installation was successfull, there will be a warning message on the usage of `...`; this can be ignored.
-
+You will be asked to update dependencies during installation. Updates can usually be skipped. However, please note that if for one or more packages an `NA` is given, these packages need to be installed.
 
 # References
 
