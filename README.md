@@ -21,7 +21,7 @@ The preferred way to install this package is through devtools:
 # install.packages("devtools")
 
 # then, install the SfL package
-devtools::install_github("dosc91/gdsm", dependencies=FALSE)
+devtools::install_github("dosc91/gdsm", dependencies=TRUE)
 ```
 
 You will be asked to update dependencies during installation; usually, updates can be skipped. Once the installation was successfull, there will be a warning message on the usage of `...`; this can be ignored.
