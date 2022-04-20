@@ -13,9 +13,6 @@ manhat(v1, v2, data = NULL)
 
 \item{data}{A data frame object or matrix.}
 }
-\value{
-Nothing.
-}
 \description{
 \code{manhat} computes the Manhattan distance between two vectors.
 Specify either two individual vectors or a data frame/matrix and two pertinent row names as input.

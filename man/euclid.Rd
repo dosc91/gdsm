@@ -13,9 +13,6 @@ euclid(v1, v2, data = NULL)
 
 \item{data}{A data frame object or matrix.}
 }
-\value{
-Nothing.
-}
 \description{
 \code{euclid} computes the Euclidian distance between two vectors.
 Specify either two individual vectors or a data frame/matrix and two pertinent row names as input.

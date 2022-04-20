@@ -13,9 +13,6 @@ cosim(v1, v2, data = NULL)
 
 \item{data}{A data frame object or matrix.}
 }
-\value{
-Nothing.
-}
 \description{
 \code{cosim} computes the cosine similarity of two vectors.
 Specify either two individual vectors or a data frame/matrix and two pertinent row names as input.

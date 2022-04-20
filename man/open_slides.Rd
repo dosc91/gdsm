@@ -9,9 +9,6 @@ open_slides(session)
 \arguments{
 \item{session_number}{The number of the session.}
 }
-\value{
-Nothing.
-}
 \description{
 Calling \code{open_slides} with a session number as argument will open the slides for that session.
 The slides will be opened in your default browser. This function is inspired by Schmitz & Esser (see references).
