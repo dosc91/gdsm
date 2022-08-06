@@ -2,6 +2,11 @@
 
 export(cosim)
 export(euclid)
+export(find_nn)
 export(manhat)
+export(n_density)
 export(open_exercises)
 export(open_slides)
+export(random_matrix)
+export(shannon)
+export(tSNE_df)
