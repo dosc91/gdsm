@@ -4,7 +4,7 @@
 \alias{find_nn}
 \title{Find Nearest Neighbors}
 \usage{
-find_nn(vec, neighbors, n = 5, method = "euclid")
+find_nn(vec, neighbors, n = 5, method = "cor")
 }
 \arguments{
 \item{vec}{The vector for which neighbors are to be found. This is either a vector saved as object or a row of the \code{neighbors} data frame or matrix. If a row of a data frame or matrix is specified, this row is excluded as competitor for the nearest neighbor (as a row will be closest to itself).}
@@ -13,10 +13,10 @@ find_nn(vec, neighbors, n = 5, method = "euclid")
 
 \item{n}{The number of neighbors wanted as output. Defaults to \code{5}.}
 
-\item{method}{The measure used to determine the nearest neighbors. Either \code{"cosim"}, \code{"euclid"} (default), or \code{"manhat"}.}
+\item{method}{The measure used to determine the nearest neighbors. Either \code{"cor"}, \code{"cosim"}, \code{"euclid"} (default), or \code{"manhat"}.}
 }
 \description{
-\code{find_nn} finds the nearest neighbor for a given vector. Neighbors can be found via cosine similarity, Euclidean distance, or
+\code{find_nn} finds the nearest neighbor for a given vector. Neighbors can be found via pearson correlation, cosine similarity, Euclidean distance, or
 Manhattan distance.
 }
 \examples{
@@ -25,6 +25,8 @@ Manhattan distance.
 
 vector <- runif(50, 0, 10)
 data("gdsm_mat")
+
+find_nn(vec = vector, neighbors = gdsm_mat, 3, "cor")
 
 find_nn(vec = vector, neighbors = gdsm_mat, 3, "cosim")
 
@@ -36,6 +38,8 @@ find_nn(vec = vector, neighbors = gdsm_mat, 3, "manhat")
 ### a vector specified by its name & its matrix of neighbors
 
 data("gdsm_mat")
+
+find_nn(vec = "var12", neighbors = gdsm_mat, 3, "cor")
 
 find_nn(vec = "var12", neighbors = gdsm_mat, 3, "cosim")
 
