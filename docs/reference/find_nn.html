@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Find Nearest Neighbors — find_nn" />
-<meta property="og:description" content="find_nn finds the nearest neighbor for a given vector. Neighbors can be found via cosine similarity, Euclidean distance, or
+<meta property="og:description" content="find_nn finds the nearest neighbor for a given vector. Neighbors can be found via pearson correlation, cosine similarity, Euclidean distance, or
 Manhattan distance." />
 
 
@@ -73,7 +73,7 @@ Manhattan distance." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gdsm</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
       </span>
     </div>
 
@@ -110,11 +110,11 @@ Manhattan distance." />
     </div>
 
     <div class="ref-description">
-    <p><code>find_nn</code> finds the nearest neighbor for a given vector. Neighbors can be found via cosine similarity, Euclidean distance, or
+    <p><code>find_nn</code> finds the nearest neighbor for a given vector. Neighbors can be found via pearson correlation, cosine similarity, Euclidean distance, or
 Manhattan distance.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>find_nn</span><span class='op'>(</span><span class='va'>vec</span>, <span class='va'>neighbors</span>, n <span class='op'>=</span> <span class='fl'>5</span>, method <span class='op'>=</span> <span class='st'>"euclid"</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>find_nn</span><span class='op'>(</span><span class='va'>vec</span>, <span class='va'>neighbors</span>, n <span class='op'>=</span> <span class='fl'>5</span>, method <span class='op'>=</span> <span class='st'>"cor"</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -133,7 +133,7 @@ Manhattan distance.</p>
     </tr>
     <tr>
       <th>method</th>
-      <td><p>The measure used to determine the nearest neighbors. Either <code>"cosim"</code>, <code>"euclid"</code> (default), or <code>"manhat"</code>.</p></td>
+      <td><p>The measure used to determine the nearest neighbors. Either <code>"cor"</code>, <code>"cosim"</code>, <code>"euclid"</code> (default), or <code>"manhat"</code>.</p></td>
     </tr>
     </table>
 
@@ -147,6 +147,12 @@ Manhattan distance.</p>
 <span class='r-in'></span>
 <span class='r-in'><span class='va'>vector</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>50</span>, <span class='fl'>0</span>, <span class='fl'>10</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"gdsm_mat"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>find_nn</span><span class='op'>(</span>vec <span class='op'>=</span> <span class='va'>vector</span>, neighbors <span class='op'>=</span> <span class='va'>gdsm_mat</span>, <span class='fl'>3</span>, <span class='st'>"cor"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>         cor nearest_neighbor</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 0.2821214            var13</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 0.2774480            var19</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3 0.2180090            var02</span>
 <span class='r-in'></span>
 <span class='r-in'><span class='fu'>find_nn</span><span class='op'>(</span>vec <span class='op'>=</span> <span class='va'>vector</span>, neighbors <span class='op'>=</span> <span class='va'>gdsm_mat</span>, <span class='fl'>3</span>, <span class='st'>"cosim"</span><span class='op'>)</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>       cosim nearest_neighbor</span>
@@ -170,6 +176,12 @@ Manhattan distance.</p>
 <span class='r-in'><span class='co'>### a vector specified by its name &amp; its matrix of neighbors</span></span>
 <span class='r-in'></span>
 <span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"gdsm_mat"</span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'>find_nn</span><span class='op'>(</span>vec <span class='op'>=</span> <span class='st'>"var12"</span>, neighbors <span class='op'>=</span> <span class='va'>gdsm_mat</span>, <span class='fl'>3</span>, <span class='st'>"cor"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>         cor nearest_neighbor</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 1 0.1653992            var13</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 2 0.1547184            var02</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 3 0.1090967            var09</span>
 <span class='r-in'></span>
 <span class='r-in'><span class='fu'>find_nn</span><span class='op'>(</span>vec <span class='op'>=</span> <span class='st'>"var12"</span>, neighbors <span class='op'>=</span> <span class='va'>gdsm_mat</span>, <span class='fl'>3</span>, <span class='st'>"cosim"</span><span class='op'>)</span></span>
 <span class='r-out co'><span class='r-pr'>#&gt;</span>       cosim nearest_neighbor</span>
