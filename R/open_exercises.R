@@ -18,9 +18,9 @@ open_exercises <- function(session) {
 
   num <- stringr::str_pad(session, 2, pad = '0')
 
-  real_session <- session - 1
+  if (session > 2 & session < 7) {
 
-  if (real_session > 0 & real_session < 1) {
+    real_session <- session - 2
 
     utils::browseURL(sessionlinks[real_session])
 
@@ -28,7 +28,7 @@ open_exercises <- function(session) {
 
     cli::cli_alert_danger(
 
-      glue::glue("I am not aware of exercises for session {num}! Currently, I only know of exercises for sessions ...!")
+      glue::glue("I am not aware of exercises for session {num}! Currently, I only know of exercises for sessions 3, 4, 5, and 6!")
 
     )
   }
@@ -36,8 +36,10 @@ open_exercises <- function(session) {
 
 
 sessionlinks <- c(
-  "",
-  ""
+  "https://dosc91.github.io/gdsm/exercises/Statistik_semantischer_Vektoren.html",
+  "https://dosc91.github.io/gdsm/exercises/Visualisierung_semantischer_Vektoren.html",
+  "https://dosc91.github.io/gdsm/exercises/fastText.html",
+  "https://dosc91.github.io/gdsm/exercises/Naive_Discriminative_Learning.html"
 )
 
 
