@@ -22,7 +22,7 @@ open_exercises <- function(session) {
 
     real_session <- session - 2
 
-    utils::browseURL(sessionlinks[real_session])
+    utils::browseURL(exerciselinks[real_session])
 
   } else {
 
@@ -35,7 +35,7 @@ open_exercises <- function(session) {
 }
 
 
-sessionlinks <- c(
+exerciselinks <- c(
   "https://dosc91.github.io/gdsm/exercises/Statistik_semantischer_Vektoren.html",
   "https://dosc91.github.io/gdsm/exercises/Visualisierung_semantischer_Vektoren.html",
   "https://dosc91.github.io/gdsm/exercises/fastText.html",
