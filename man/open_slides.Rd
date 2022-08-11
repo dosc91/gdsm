@@ -14,7 +14,7 @@ Calling \code{open_slides} with a session number as argument will open the slide
 The slides will be opened in your default browser. This function is inspired by Schmitz & Esser (see references).
 }
 \examples{
-open_slides(02)
+open_slides(01)
 
 }
 \references{
