@@ -20,7 +20,7 @@ The preferred way to install this package is through devtools:
 # if devtools has not been installed yet, please install it first
 # install.packages("devtools")
 
-# then, install the SfL package
+# then, install the gdsm package
 devtools::install_github("dosc91/gdsm", dependencies=TRUE)
 ```
 
